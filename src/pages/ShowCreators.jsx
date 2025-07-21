@@ -24,8 +24,8 @@ function ShowCreators() {
   }, []);
 
   return (
-    <div>
-      <h1>All Creators</h1>
+    <div className="creator-container">
+      <h1 className="creator-title">Vocaloid Creators</h1>
       <Link to="/new">Add New Creator</Link>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {creators.length === 0 ? (
