@@ -1,0 +1,16 @@
+.creator-container{
+    text-align: center;
+}
+.creator-title{
+    margin: 10%;
+    font-size: 2rem;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+.add-button{
+    width: 300px;
+    max-width: 100%;
+}

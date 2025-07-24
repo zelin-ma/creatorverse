@@ -1,0 +1,16 @@
+.creator-main{
+    display: flex;
+    margin-top: 3%;
+}
+.Image-containor{
+    width: 100%;
+    text-align: center;
+    min-width: 300px;
+}
+p{
+    margin: 2%;
+    padding: 2%;
+}
+.link{
+    margin: 20px;
+}

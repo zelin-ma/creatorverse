@@ -1,0 +1,14 @@
+.editCreator-title{
+    text-align: center;
+}
+.editCreator-containor{
+    width: 800px;
+    justify-self: center;
+    margin: 3% 0px;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0.145rem 0.261px 0.29rem 0.174rem rgba(27, 40, 50, 0.1);
+}

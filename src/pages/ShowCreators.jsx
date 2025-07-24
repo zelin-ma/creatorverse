@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../client';
 import CreatorCard from '../components/CreatorCard';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
+import './ShowCreators.css';
 
 function ShowCreators() {
   const [creators, setCreators] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCreators = async () => {
@@ -23,11 +25,15 @@ function ShowCreators() {
     fetchCreators();
   }, []);
 
+  const handleAddCreator = () => {
+    navigate('/new'); 
+  };
+
   return (
     <div className="creator-container">
       <h1 className="creator-title">Vocaloid Creators</h1>
-      <Link to="/new">Add New Creator</Link>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {creators.length === 0 ? (
           <p>No creators found.</p>
         ) : (
@@ -35,6 +41,11 @@ function ShowCreators() {
             <CreatorCard key={creator.id} creator={creator} />
           ))
         )}
+      </div>
+      <div className='button-container'>
+        <button onClick={handleAddCreator} className="add-button">
+          Add New Creator
+        </button>
       </div>
     </div>
   );

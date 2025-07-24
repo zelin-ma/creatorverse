@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
+import './ViewCreator.css';
 
 function ViewCreator() {
   const navigate = useNavigate();
@@ -36,16 +37,24 @@ function ViewCreator() {
 
   return (
     <div>
-      <h2>{creator.name}</h2>
-      <a href={creator.url} target="_blank" rel="noreferrer">Visit Channel</a>
-      <p>{creator.description}</p>
-      {creator.imageURL && (
-        <div>
-          <img src={creator.imageURL} alt={creator.name} width="300" />
+      <button onClick={() => navigate('/')} style={{backgroundColor: 'red', width: '100px', marginLeft: '2%', marginTop: '1%' }}>
+      Back
+      </button>
+      <div className='creator-main'>
+        <div className='Image-containor'>
+          <h2>{creator.name}</h2>
+          {creator.imageURL && (
+            <div>
+              <img src={creator.imageURL} alt={creator.name} width="300" />
+            </div>
+          )}
+          <br/>
+          <a href={creator.url} target="_blank" rel="noreferrer" className='link'>Visit Channel</a>
         </div>
-      )}
+        <p>{creator.description}</p>
+      </div>
       <br />
-      <button onClick={handleEdit}>Edit Creator</button>
+      <button onClick={handleEdit} style={{width: '200px', marginLeft: '5%'  }}>Edit Creator</button>
     </div>
   );
 }

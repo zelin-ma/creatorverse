@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { supabase } from '../client';
 import { useNavigate } from 'react-router-dom';
+import './AddCreator.css';
 
 function AddCreator() {
   const [formData, setFormData] = useState({
@@ -35,8 +36,8 @@ function AddCreator() {
     }
   };
   return (
-    <div>
-      <h2>Add New Creator</h2>
+    <div className='addCreator-containor'>
+      <h2 className='addCreator-title'>Add New Creator</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Name:<br />
@@ -69,6 +70,7 @@ function AddCreator() {
             value={formData.description}
             onChange={handleChange}
             required
+            style={{height:'400px' ,resize: 'vertical'}}
           />
         </label>
         <br /><br />
@@ -84,7 +86,7 @@ function AddCreator() {
         </label>
         <br /><br />
 
-        <button type="submit">Add Creator</button>
+        <button type="submit" className='button-submit'>Add Creator</button>
       </form>
     </div>
   );

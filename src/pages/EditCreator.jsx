@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
+import './EditCreator.css';
 
 function EditCreator() {
   const { id } = useParams();
@@ -69,8 +70,8 @@ function EditCreator() {
   };
 
   return (
-    <div>
-      <h2>Edit Creator</h2>
+    <div className='editCreator-containor'>
+      <h2 className='editCreator-title'>Edit Creator</h2>
       <form onSubmit={handleSubmit}>
         <input
           name="name"
@@ -92,6 +93,7 @@ function EditCreator() {
           onChange={handleChange}
           placeholder="Description"
           required
+          style={{height:'400px' ,resize: 'vertical'}}
         /><br /><br />
         <input
           name="imageURL"
